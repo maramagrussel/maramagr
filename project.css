@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 *{
@@ -14,6 +16,8 @@ body{
     overflow-x:hidden;
 }
 
+/* NOISE EFFECT */
+
 .noise{
     position:fixed;
     inset:0;
@@ -24,15 +28,20 @@ body{
     pointer-events:none;
 }
 
+/* NAVIGATION */
+
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:30px 8%;
-    position:fixed;
+    padding:25px 8%;
+    position:sticky;
+    top:0;
     width:100%;
     z-index:100;
     backdrop-filter:blur(10px);
+    background:rgba(10,10,10,.9);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
@@ -58,6 +67,8 @@ nav a{
 nav a:hover{
     opacity:.5;
 }
+
+/* HERO */
 
 .hero{
     min-height:100vh;
@@ -98,6 +109,8 @@ nav a:hover{
     transform:translateY(-3px);
 }
 
+/* SECTIONS */
+
 .section{
     padding:120px 8%;
     display:grid;
@@ -122,6 +135,8 @@ nav a:hover{
     line-height:1.8;
 }
 
+/* PROJECTS */
+
 .project{
     padding:25px 0;
     border-bottom:1px solid rgba(255,255,255,.1);
@@ -137,12 +152,16 @@ nav a:hover{
     margin-bottom:8px;
 }
 
+/* CONTACT */
+
 .contact-link{
     color:white;
     text-decoration:none;
     font-size:2rem;
     border-bottom:2px solid white;
 }
+
+/* FOOTER */
 
 footer{
     text-align:center;
@@ -151,21 +170,94 @@ footer{
     font-size:.9rem;
 }
 
+/* ===== MOBILE FIX ===== */
+
 @media (max-width:768px){
 
+    body{
+        overflow-x:hidden;
+    }
+
+    nav{
+        position:relative;
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+        text-align:center;
+    }
+
     nav ul{
-        gap:20px;
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:18px;
+    }
+
+    nav a{
+        font-size:.75rem;
+        letter-spacing:1px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:70px 24px;
+    }
+
+    .small-text{
+        font-size:.7rem;
+        letter-spacing:2px;
+    }
+
+    .hero h1{
+        font-size:clamp(2.8rem,14vw,4.5rem);
+        line-height:.95;
+        word-break:break-word;
+    }
+
+    .btn{
+        margin-top:30px;
+        padding:14px 24px;
+        font-size:.9rem;
     }
 
     .section{
         grid-template-columns:1fr;
+        gap:20px;
+        padding:70px 24px;
     }
 
-    .hero h1{
-        font-size:4rem;
+    .section span{
+        display:none;
+    }
+
+    .section h2{
+        font-size:2rem;
+        margin-bottom:20px;
+    }
+
+    .section p{
+        font-size:.95rem;
+        line-height:1.8;
+    }
+
+    .project{
+        padding:20px 0;
+    }
+
+    .project h3{
+        font-size:1.4rem;
+    }
+
+    .project:hover{
+        transform:none;
     }
 
     .contact-link{
-        font-size:1.3rem;
+        font-size:1.2rem;
+        word-break:break-word;
+    }
+
+    footer{
+        padding:30px 20px;
     }
 }
